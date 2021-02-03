@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>PARAMETER DALAM FUNGSI</title>
+            <script language="javascript">
+                function warning(pesan_kita) {
+                    alert(pesan_kita);
+                }
+                function password(pesan_prompt, pesan_sukses, pesan_gagal) {
+                    var passwd = prompt(pesan_prompt);
+                        if (passwd != 'petugas') {
+                            alert(pesan_gagal);
+                        } else {
+                            alert(pesan_sukses);
+                        }
+                }
+            </script>
+    </head>
+    <body onload="warning('Dilarang Masuk Selain Petugas');">
+        <p><b>TEMPAT RAHASIA</b></p>
+        <p>Sekali lagi saya tegaskan jangan memasuki area ini selain petugas. BERBAHAYA!!!</p>
+            <a href="javascript: password('Masukkan Password:', 'Password Benar!', 'Password Salah');">Masuk =></a>
+    </body>
+</html>
+
+<!-- 
+    PENJELASAN SCRIPT
+    Script pesan_kita dan dilarang masuk selain petugas adalah untuk fungsi warning(). 
+    Sedangkan script pesan_prompt, pesan_sukses, pesan_gagal, dan Masukkan Password:', 'Password Benar!', 'Password Salah adalah untuk fungsi password(). 
+    Fungsi warning() memiliki 1 parameter yaitu pesan_kita. Isi dari alert() nantinya akan diganti oleh input yang kita masukkan saat menjalankan fungsi warning() dalam hal ini pada saat onload. 
+    Karena isi dari alert adalah string maka kita beri tanda petik pada Dilarang Masuk Selain Petugas!.
+
+    Sedangkan untuk fungsi password() memiliki 3 parameter yaitu pesan_prompt, pesan_sukses, pesan_gagal. 
+    Nantinya kita menjalankan fungsi password harus dengan 3 parameter. 
+    Pada script di atas kita menjalankan fungsi password() dengan mengetikkan password(‘Masukkan Password:’, ‘Password Benar!’, ‘Password Salah’). 
+    Jadi, ketika user salah memasukkan password akan muncul box warning yang bertuliskan Password Salah. 
+    Sebaliknya jika password benar akan muncul box warning bertuliskan Password Benar!.
+
+    Parameter juga ada yang bersifat optional artinya bersifat pilihan boleh diisi boleh tidak. 
+    Jika kita ingin membuat parameter yang bersifat optional kita harus memberi nilai pada parameter tersebut.
+    
+    function param_opt(param1, param2 = ‘pilihan’) {
+        if (param 2 != null) {
+            alert(param1); alert(param2);
+        } else{
+            alert(param1);
+        }
+    }
+    
+    Arti fungsi diatas adalah jika parameter 2 tidak kosong(not null) maka blababla.... selain itu blablala.... 
+    Jadi kita dapat menuliskan parameter tersebut dengan hanya menulis param_opt(‘pesan no.1’). Kita juga dapat m
+-->

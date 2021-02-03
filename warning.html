@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Menampilkan Pesan Warning</title>
+            <script language="javascript">
+                var pesan = "Dilarang Masuk selain Petugas!";
+                    function warning() {
+                        alert(pesan);
+                    }
+                    function password() {
+                        var passwd = prompt("Masukkan Password");
+                            if (passwd != 'petugas') {
+                                    alert('Gagal');
+                            } else {
+                                    alert('Sukses');
+                            }
+                    }
+            </script>
+    </head>
+    <body onload="warning();">
+        <p><b>TEMPAT RAHASIA</b></p>
+        <p>Sekali lagi saya tegaskan, jangan memasuki area ini selain petugas. BERBAHAYA!!!</p> 
+            <a href="javascript: password();">Masuk =></a>
+    </body>
+</html> 
+
+<!-- 
+    PENJELASAN SCRIPT
+    Arti dari var pada script diatas adalah definisi sebuah variabel. 
+    Nama variabel pada javascript selalu diawali syntax var. 
+    Isi variabel dapat berupa string(huruf) atau integer(angka). 
+    Jika variabel berjenis string maka selalu diapit oleh tanda ‘.....isi variabel...‘ (petik satu) atau “ ...isi variabel...” (petik dua).
+
+    Pada javascript setiap akhir dari suatu baris kode diakhiri dengan tanda ;(titik koma).
+    Sekarang perhatikan script yang memiliki syntax function. 
+    Function merupakan syntax untuk menuliskan suatu fungsi. 
+    Fungsi sangat berguna agar kita tidak perlu menuliskan beberapa perintah berulang-ulang. 
+    Pada script diatas terdapat dua fungsi buatan kita sendiri yaitu fungsi warning() dan fungsi password().
+
+    Nama suatu fungsi tidak boleh mengandung spasi dan harus diawali oleh huruf dan harus ditutup dengan tanda (). 
+    Fungsi diapit oleh tanda { .... }. Dalam suatu fungsi bisa terdapat fungsi lagi. 
+    Pada fungsi warning() kita menuliskan alert(pesan), alert() merupakan fungsi builtin(bawaan) javascript yang fungsinya untuk menampilkan box warning. 
+    Begitu pula dengan prompt() pada fungsi kedua kita, prompt() juga merupakan fungsi built-in javascript yang fungsinya untuk menampilkan input box. 
+
+    Pada fungsi password() passwordnya adalah petugas. Tanda != artinya tidak sama dengan.
+    Fungsi password menggunakan pengambilan keputusan else. Else digunakan untuk mengambil keputusan diantara 2 kejadian. 
+    Jadi fungsi password kalau diterjemahkan kedalam bahasa Indonesia yang baik dan benar bunyinya adalah jika password tidak sama dengan petugas maka munculkan box gagal selain itu munculkan box sukses.
+
+    PARAMETER PADA FUNGSI
+    Lihat pada fungsi alert(pesan), pesan dalam hal ini yang disebut parameter. 
+    Fungsi dapat memiliki lebih dari satu parameter. Pada fungsi yang kita buat pada file warning.html tidak memilki parameter.
+
+-->
