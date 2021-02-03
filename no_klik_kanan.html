@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>No Right Click</title>
+            <script language="javascript">
+                var pesan = 'Hayoo, mau ngapain?? wkwkwk';
+                    function klik_IE() {
+                        if (event.button == 2) {
+                            alert(pesan);
+                        }
+                    }
+                    function klik_NS(e) {
+                        if (document.layers || document.getElementById && !document.all) {
+                            if (e.which == 2 || e.which == 3) {
+                                alert(pesan);
+                            }
+                        }
+                    }
+                        if (document.layers) {
+                            document.captureEvents(event.mousedown);
+                            document.onmousedown = klik_NS;
+                        } else if (document.all && !document.getElementById) {
+                            document.onmousedown = klik_IE;
+                        }
+                            document.oncontextmenu = new Function("alert(pesan); return false")
+            </script>
+    </head>
+    <body>
+        <p>COBA KLIK KANAN</p>
+    </body>
+</html> 
+
+<!--
+    PENJELASAN SCRIPT
+    Script diatas dirancang untuk bekerja pada browser Internet Explorer, Netscape Navigatior, Mozilla dan FireFox. 
+    Perhatikan fungsi klik_IE() fungsi ini khusus pada browser IE. Pada fungsi ini terdapat syntax event. 
+    Event merupakan syntax yang digunakan untuk menangani suatu aksi dari user. 
+    Pada script diatas event digunakan untuk menangani penekanan tombol mouse(button) kanan(2). 
+    Jadi ketika user mengklik tombol mouse kanan akan dimunculkan box warning. 
+
+    Pada fungsi klik_NS, e dalam hal ini mengindikasikan event yang terjadi bukan parameter.
+    Fungsi ini khusus untuk browser keluarga Netscape(Navigator, Mozilla, dan Firefox). 
+    Tanda || artinya “atau” sama dengan syntax OR sedangkan tanda && aritnya “dan” sama dengan syntax AND.
+
+    Arti dari
+    if (document.layers) {
+        document.captureEvents(event.mousedown);
+        document.onmousedown .....
+        ....
+    adalah jika pada dokumen terjadi event klik jalankan fungsi klik_NS. 
+    Sedangkan fungsi klik_NS akan memunculkan box warning jika hanya tombol mouse kanan yang diklik. 
+    Arti dari kode dibawahnya juga sama.
+-->
