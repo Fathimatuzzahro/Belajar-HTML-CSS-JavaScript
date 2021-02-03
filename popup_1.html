@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Membuat Pop-Up Window</title>
+            <script language="javascript">
+                function buka_popup() {
+                    window.open('popup_2.html', '', 'width=640, height=480, menubar=yes,location=yes, scrollbars=yes, resizeable=yes, status=yes, copyhistory=no, toolbar=no');
+                }
+            </script>
+    <body onload="buka_popup();">
+        <p>Anda juga dapat membuka window popupnya dari sini</p>
+            <a href="javascript: buka_popup();">KLIK DISINI</a>
+    </body>
+</html> 
+
+<!--
+    Perlu anda ketahui jika anda menggunakan browser firefox atau IE dengan SP 2 maka browser akan block terlebih dahulu dan minta persetujuan anda apakah window akan ditampilkan. 
+
+    Untuk membuka window lain kita menggunakan metode open dari object window. 
+    Metode open memiliki 3 attribut kalau istilah dalam fungsi parameter. 
+    Attribut pertama adalah lokasi file yang akan kita buka. 
+    Attribut kedua kurang penting yaitu nama window, jika window yang akan dibuka sudah mempunyai nama maka attribut ini tidak berguna. 
+    Attribut yang ketiga ini cukup banyak isinya
+-->
