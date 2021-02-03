@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Menampilkan Hari dan Tanggal</title>
+            <script language="javascript">
+                function show_hari() {
+                //membuat variabel bertipe array untuk nama hari
+                    var NamaHari = new Array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
+                //membuat variabel bertipe array untuk nama bulan
+                    var NamaBulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+                    var sekarang = new Date();
+                    var HariIni = NamaHari[sekarang.getDay()];
+                    var BulanIni = NamaBulan[sekarang.getMonth()];
+                    var TglSekarang = sekarang.getDate();
+                    var TahunIni = sekarang.getFullYear();
+                    document.write(HariIni + ", " + TglSekarang + " " + BulanIni + " " + TahunIni);
+                }
+            </script>
+    </head>
+    <body>
+        <p><font color="red">Hari Ini: </font><script>show_hari();</script>.</p>
+    </body>
+</html> 
+
+<!--
+    PENJELASAN SCRIPT
+    Array merupakan variabel yang dapat berisikan beberapa nilai sekaligus. Nilai index dari array dimulai dari 0. 
+    Pada variabel NamaHari berisikan 7 nilai. Yaitu minggu, senin, dan seterusnya. 
+    Karena dimulai dari 0 maka minggu=0, senin=1, selasa=2, hingga sabtu=6. 
+
+    Apa artinya? Contohnya seperti ini. Jika Anda menuliskan fungsi document.write(NamaHari[2]). Maka ouput dari perintah diatas adalah selasa.
+    Hal yang sama berlaku untuk variabel NamaBulan.
+
+    Pada variabel sekarang isinya adalah new Date(). Date adalah fungsi javascript untuk mendapatkan tanggal, hari, waktu, tahun sekarang. 
+    Di sini kita akan menerapkan OOP secara lebih relevan.
+
+    Variabel HariIni berisi array dari NamaHari. Sekarang merupakan object tanggal dan memiliki beberapa metode di antaranya getDay() = untuk mendapatkan hari dalam angka 0 sampai 6. 
+    getMonth() = untuk mendapatkan bulan dalam angka antara 0 sampai 11. 
+    getDate() = untuk mendapatkan tanggal 1 sampai 29 atau 30 atau 31. 
+    getFullYear() = untuk mendapatkan tahun dalam 4 digit angka. 
+
+    Sehingga dapat disimpulkan fungsi sekarang.getNamaFungsi() hanyalah untuk mengembalikan nilai dalam angka. 
+    Sehingga variabel array NamaHari memiliki angka/index yang dapat digunakan untuk mengembalikan nama hari dalam string(huruf).
+
+    Contohnya kita asumsikan sekarang adalah hari Rabu tanggal 3 Februari 2021. 
+    Jika kita menuliskan HariIni = NamaHari[sekarang.getDay()];. 
+    Maka sekarang.getDay() akan menghasilkan nilai 4. 
+    Ingat NamaHari[4] artinya apa ya Rabu. 
+
+-->
